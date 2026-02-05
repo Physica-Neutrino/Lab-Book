@@ -1,0 +1,41 @@
+---
+title: "Literature Review"
+---
+
+## Articles:
+
+Article 1: Cluster Algorithm for the Ising Model
+
+Article 2: “Clusters” in the king Model, Metastable States and Essential Singularity
+
+Article 3: The FCC Ising Model in the cluster variation approximation
+
+Article 4: Exact cluster size distribution in the one-dimensional Ising model
+
+Article 5: Shape and size of clusters in the Ising model
+
+Article 6: Using the Random-Cluster Model for Ising Model Simulations
+
+## Literature Summaries
+
+### Article 1: Cluster Algorithm for the Ising Model
+
+Describes cluster-based Monte Carlo algorithms for the Ising model — specifically the Swendsen–Wang algorithm, which builds clusters of same-spin sites and flips them as whole units instead of flipping spins one by one. It also covers related techniques for quantum Monte Carlo, but the core part that connects to your questions is the cluster formation and identification.
+
+Defines a cluster as a group of spins that are the same orientation (all +1 or all −1) or connected via “active” bonds. Bonds are formed only between neighbouring spins that are aligned. Treats cluster formation as a core structural object of simulation, not arbitrary grouping - therefore they have physical meaning in terms of connected spins linked by thermal weighting, and also algorithmic meaning. 
+
+Cluster Construction Rule: For each nearest-neighbour pair $(_i,_j)(_i,_j)$. If spins match: $σ_i=σ_jσ_i​=σ_j$, a bond may be activated between them. If spins differ: $σ_i≠σ_jσ_i​=σ_j​$, no bond is formed. Bond activation is probabilistic, with probability based on temperature and interaction strength.
+Equation: $P(b_{ij}=1)=1−e^{-2βJ}$. This governs bond formation and hence cluster structure
+
+Computational method: generate bonds, identify clusters via graph traversal, flip clusters as collective units
+
+### Article 2: “Clusters” in the king Model, Metastable States and Essential Singularity
+
+Discusses different ways to define clusters in the Ising model, how those definitions relate to critical phenomena and nucleation theory, and how cluster concentrations scale near critical points using both theoretical arguments and Monte Carlo results. It explores how cluster statistics behave, including a crossover from critical to geometric behaviour, and relates cluster fluctuations to thermodynamic singularities and metastable states.
+
+Cluster Definitions: Clusters are described in terms of a contour surrounding flipped spins — effectively a geometric object defined by size $ss$ and number of reversed spins $ll$. The paper shows that critical behaviour of clusters is not dominated by fully “ramified” (tree-like) clusters — contrary to some earlier conjectures.  For large clusters, a crossover to “geometric” behaviour is observed, meaning clusters behave like percolation objects at large scales.  This crossover is interpreted using standard scaling theory of critical phenomena. 
+
+Paper connects cluster properties in the Ising model directly to critical scaling behaviour near the phase transition. By introducing the cluster concentration function $p_{(l,s)}p_{(l,s)}$, which depends on both the number of flipped spins and the geometric size of the enclosing contour, it shows that cluster size and shape distributions obey scaling laws consistent with universal critical behaviour. It also demonstrates that clusters at criticality are not simply highly ramified, tree-like structures, but instead exhibit more complex geometric characteristics that reflect the underlying physics of the phase transition. Its scaling arguments imply that cluster statistics are governed by the same principles that determine critical exponents, linking geometric cluster properties to thermodynamic critical phenomena.
+
+
+

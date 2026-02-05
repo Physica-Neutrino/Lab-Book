@@ -1,0 +1,6 @@
+---
+title: "Very simple page"
+---
+
+
+This is to test the updating ability 
