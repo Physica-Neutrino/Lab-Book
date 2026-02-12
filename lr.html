@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Literature Review – Third Year Labs - Ising Model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Third Year Labs - Ising Model</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-weekly-log-of-work" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Weekly Log of Work</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-weekly-log-of-work">    
+        <li>
+    <a class="dropdown-item" href="./Weekly-Log.html">
+ <span class="dropdown-text">Log Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./week1.html">
+ <span class="dropdown-text">Week 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./week2.html">
+ <span class="dropdown-text">Week 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./week3.html">
+ <span class="dropdown-text">Week 3</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./hi.html"> 
+<span class="menu-text">Hi</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#articles" id="toc-articles" class="nav-link active" data-scroll-target="#articles">Articles:</a></li>
+  <li><a href="#literature-summaries" id="toc-literature-summaries" class="nav-link" data-scroll-target="#literature-summaries">Literature Summaries</a>
+  <ul class="collapse">
+  <li><a href="#article-1-cluster-algorithm-for-the-ising-model" id="toc-article-1-cluster-algorithm-for-the-ising-model" class="nav-link" data-scroll-target="#article-1-cluster-algorithm-for-the-ising-model">Article 1: Cluster Algorithm for the Ising Model</a></li>
+  <li><a href="#article-2-clusters-in-the-king-model-metastable-states-and-essential-singularity" id="toc-article-2-clusters-in-the-king-model-metastable-states-and-essential-singularity" class="nav-link" data-scroll-target="#article-2-clusters-in-the-king-model-metastable-states-and-essential-singularity">Article 2: “Clusters” in the king Model, Metastable States and Essential Singularity</a></li>
+  </ul></li>
+  <li><a href="#article-3-the-fcc-ising-model-in-the-cluster-variation-approximation" id="toc-article-3-the-fcc-ising-model-in-the-cluster-variation-approximation" class="nav-link" data-scroll-target="#article-3-the-fcc-ising-model-in-the-cluster-variation-approximation">Article 3: The FCC Ising Model in the cluster variation approximation</a></li>
+  <li><a href="#article-4-exact-cluster-size-distribution-in-the-one-dimensional-ising-model" id="toc-article-4-exact-cluster-size-distribution-in-the-one-dimensional-ising-model" class="nav-link" data-scroll-target="#article-4-exact-cluster-size-distribution-in-the-one-dimensional-ising-model">Article 4: Exact cluster size distribution in the one-dimensional Ising model</a></li>
+  <li><a href="#article-5-shape-and-size-of-clusters-in-the-ising-model" id="toc-article-5-shape-and-size-of-clusters-in-the-ising-model" class="nav-link" data-scroll-target="#article-5-shape-and-size-of-clusters-in-the-ising-model">Article 5: Shape and size of clusters in the Ising model</a></li>
+  <li><a href="#article-6-using-the-random-cluster-model-for-ising-model-simulations" id="toc-article-6-using-the-random-cluster-model-for-ising-model-simulations" class="nav-link" data-scroll-target="#article-6-using-the-random-cluster-model-for-ising-model-simulations">Article 6: Using the Random-Cluster Model for Ising Model Simulations</a></li>
+  <li><a href="#overall-literature-summary" id="toc-overall-literature-summary" class="nav-link" data-scroll-target="#overall-literature-summary">Overall Literature Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Literature Review</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="articles" class="level2">
+<h2 class="anchored" data-anchor-id="articles">Articles:</h2>
+<p>Article 1: <a href="https://www.ggi.infn.it/talkfiles/slides/slides6163.pdf">Cluster Algorithm for the Ising Model</a></p>
+<p>Article 2: <a href="https://pdf.sciencedirectassets.com/272507/1-s2.0-S0003491600X04514/1-s2.0-0003491676901597/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGgaCXVzLWVhc3QtMSJHMEUCIQDUePsxQdkYSULeKkjQl%2Fde8szhaFUZAhO89iFVNmce5gIgFImaY0%2B27DyG1K28zABzbY%2F4yx65gNMu6hrpfeFJAj4qswUIMRAFGgwwNTkwMDM1NDY4NjUiDH63vTrS%2FV6AyGCO5yqQBfMCpIEWW4UfFzk1BcJZASr955zDJlNHLyuKx%2BNI4YA97Ez5RdTldzDKjluR02si37gz5xtQBBjp47Jw%2Fp5yYKDuAOJg90nYKUtNJ7T%2FNCcOTByDUk%2BA74qP8rQX%2FdrZDnIsRouAfWxc78cXmJDpZzHaA%2B%2B2Zd85fUqL%2BIZR2aIR9uIQWcZWhiFry2iN2oivYzYE9exv%2FTf82h08Ag6B366vgyKrdoZfD0AbIGKmtfFtAsU73IAFiXleObjwaam%2B7hwtzl5UEy08kI7vin1S1p1jOPXc84vU88r0T86ImDhZwRo7ZLJ%2F%2FdzAk9MzYAZUHxFdjMcE98c6zGqX71wTKdr59RIe19Zzk0tRNXX%2Fk6Qg6zOPKd9tlW4EdkjbWCque5Tr6weW3xI%2BOdwl%2F9X3BEwLnlMDjLqp5V0AdU7Y3VNnD0G52xWVS5n2tLgF7NoPm5i6i%2BMkNz4MLEfPMREqIoV0zV5Xq4UiNVdixfMs%2F6y4z4NIsOuG5O%2FTRQTeEGfE%2FqjTToo35xwHZqle7CmnUFcCulJRNVXeD63hJHaKAcfn3w0Oxq3L6ockCaIBQ6Xgwq80%2F8lqx%2FRgr3JD82RhkF9qtxSl5JD9zcuDbZpywKoiDKyJUtWaNzApPk3Z7JqZgu2ka%2B5AyHCXBdpndWMQuPqhqAoi1OPMqhwKbZ%2Fa0ol917H0UHKPweQfqrVL0U9d4uBcUdCr4cdMCibM2Qt55CtZVKJoqoDRcTTINSlaHGswlXdInn%2FxrVT0phx6CtQAInfyn8n48YeElPZs%2B8FnpfghH7CjDAYStbjuv%2BroKGcKc7khs0NisDY3MC%2FE4sXyxZEvcXF%2FG%2F1Kfy8CfIskVKrVUbnn6vn5p2HeIzuyvpuXMNf0kswGOrEB5hAIt7nUJdXxfeZI6GEl5%2F7fDcfKPZE8eaKQuNgeQJe1WYYRz4dLsacHN7%2FRLlL0vBLnKsvTSDTszpPkb79h9CdUP%2FDR5e4oE0c3ec5J4NubGerVhUi1r%2Fc2yrW%2FufWq1Goi450XKkZrX7VQ4T2FhXwiAg0c6xl13f0W%2F%2Bs97Bo36%2B5D5mI7m5Rlz8iM58Im3qTYUCZQG9slo%2B12Zu8v69xfrKYbQsMsXJlINhlOAO9I&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20260205T160719Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Credential=ASIAQ3PHCVTY5HIGH54D%2F20260205%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=eae9a3f0589bb4ea333feb4a18eec8f9af5b82199a460d27f2eac87204ad54d4&amp;hash=68211e72d8dc41adea2b83829b9993a0fcc2f827645260092d48d07d117748e9&amp;host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&amp;pii=0003491676901597&amp;tid=spdf-5c109af2-3a84-4131-823c-a18d812a12c1&amp;sid=72b0a95f6320d74bb349c430b7e729260f2agxrqb&amp;type=client&amp;tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&amp;ua=1d04580c595702580557&amp;rr=9c93a8f6f93a4f00&amp;cc=gb">“Clusters” in the king Model, Metastable States and Essential Singularity</a></p>
+<p>Article 3: <a href="https://journals.aps.org/prb/pdf/10.1103/PhysRevB.17.2926">The FCC Ising Model in the cluster variation approximation</a></p>
+<p>Article 4: <a href="https://journals.aps.org/pre/pdf/10.1103/PhysRevE.71.026127">Exact cluster size distribution in the one-dimensional Ising model</a></p>
+<p>Article 5: <a href="https://iopscience.iop.org/article/10.1088/0305-4470/10/7/012/pdf">Shape and size of clusters in the Ising model</a></p>
+<p>Article 6: <a href="https://repository.tudelft.nl/file/File_62c5834c-11be-4455-a96e-e739bc6d9efa?preview=1">Using the Random-Cluster Model for Ising Model Simulations</a></p>
+</section>
+<section id="literature-summaries" class="level2">
+<h2 class="anchored" data-anchor-id="literature-summaries">Literature Summaries</h2>
+<section id="article-1-cluster-algorithm-for-the-ising-model" class="level3">
+<h3 class="anchored" data-anchor-id="article-1-cluster-algorithm-for-the-ising-model">Article 1: Cluster Algorithm for the Ising Model</h3>
+<p>Describes cluster-based Monte Carlo algorithms for the Ising model — specifically the Swendsen–Wang algorithm, which builds clusters of same-spin sites and flips them as whole units instead of flipping spins one by one. It also covers related techniques for quantum Monte Carlo, but the core part that connects to your questions is the cluster formation and identification.</p>
+<p>Defines a cluster as a group of spins that are the same orientation (all +1 or all −1) or connected via “active” bonds. Bonds are formed only between neighbouring spins that are aligned. Treats cluster formation as a core structural object of simulation, not arbitrary grouping - therefore they have physical meaning in terms of connected spins linked by thermal weighting, and also algorithmic meaning.</p>
+<p>Cluster Construction Rule: For each nearest-neighbour pair <span class="math inline">\((_i,_j)(_i,_j)\)</span>. If spins match: <span class="math inline">\(σ_i=σ_jσ_i​=σ_j\)</span>, a bond may be activated between them. If spins differ: <span class="math inline">\(σ_i≠σ_jσ_i​=σ_j​\)</span>, no bond is formed. Bond activation is probabilistic, with probability based on temperature and interaction strength. Equation: <span class="math inline">\(P(b_{ij}=1)=1−e^{-2βJ}\)</span>. This governs bond formation and hence cluster structure</p>
+<p>Computational method: generate bonds, identify clusters via graph traversal, flip clusters as collective units</p>
+</section>
+<section id="article-2-clusters-in-the-king-model-metastable-states-and-essential-singularity" class="level3">
+<h3 class="anchored" data-anchor-id="article-2-clusters-in-the-king-model-metastable-states-and-essential-singularity">Article 2: “Clusters” in the king Model, Metastable States and Essential Singularity</h3>
+<p>Discusses different ways to define clusters in the Ising model, how those definitions relate to critical phenomena and nucleation theory, and how cluster concentrations scale near critical points using both theoretical arguments and Monte Carlo results. It explores how cluster statistics behave, including a crossover from critical to geometric behaviour, and relates cluster fluctuations to thermodynamic singularities and metastable states.</p>
+<p>Cluster Definitions: Clusters are described in terms of a contour surrounding flipped spins — effectively a geometric object defined by size <span class="math inline">\(ss\)</span> and number of reversed spins <span class="math inline">\(ll\)</span>. The paper shows that critical behaviour of clusters is not dominated by fully “ramified” (tree-like) clusters — contrary to some earlier conjectures. For large clusters, a crossover to “geometric” behaviour is observed, meaning clusters behave like percolation objects at large scales. This crossover is interpreted using standard scaling theory of critical phenomena.</p>
+<p>Paper connects cluster properties in the Ising model directly to critical scaling behaviour near the phase transition. By introducing the cluster concentration function <span class="math inline">\(p_{(l,s)}p_{(l,s)}\)</span>, which depends on both the number of flipped spins and the geometric size of the enclosing contour, it shows that cluster size and shape distributions obey scaling laws consistent with universal critical behaviour. It also demonstrates that clusters at criticality are not simply highly ramified, tree-like structures, but instead exhibit more complex geometric characteristics that reflect the underlying physics of the phase transition. Its scaling arguments imply that cluster statistics are governed by the same principles that determine critical exponents, linking geometric cluster properties to thermodynamic critical phenomena.</p>
+</section>
+</section>
+<section id="article-3-the-fcc-ising-model-in-the-cluster-variation-approximation" class="level2">
+<h2 class="anchored" data-anchor-id="article-3-the-fcc-ising-model-in-the-cluster-variation-approximation">Article 3: The FCC Ising Model in the cluster variation approximation</h2>
+<p>Applies the cluster variation method (CVM) to the face-centered cubic (fcc) Ising ferromagnet, using increasingly large cluster approximations to compute thermodynamic properties such as the critical temperature and specific heat with high precision. The CVM is a theoretical approach that expands the free energy in terms of finite cluster probabilities, minimizing it to approximate equilibrium behaviour more accurately than simple mean-field theories.</p>
+<p>Cluster Role in the Method: Clusters here are mathematical objects selected for approximation of the free energy in the CVM. Rather than physical spin domains (as in Monte Carlo cluster counts), CVM clusters represent sets of lattice sites whose joint probabilities are explicitly tracked. Free Energy in Terms of Cluster Variables: The CVM expresses free energy as a function of cluster occupation probabilities.</p>
+<p>The equilibrium cluster probabilities come from minimizing the free energy under consistency constraints, leading to a set of coupled nonlinear equations. Using a high-level cluster approximation yields a critical temperature estimate within ~1.5% of high-temperature expansion results, showing that larger clusters capture critical correlations well.</p>
+<p>The paper uses “clusters” as a theoretical basis for improving approximations to the free energy in a three-dimensional (fcc) Ising system. The cluster variation method captures local correlations by tracking probabilities of multi-site configurations, and larger clusters in the approximation lead to better estimates of critical properties like the critical temperature. Highlights how cluster correlations influence critical behaviour.</p>
+</section>
+<section id="article-4-exact-cluster-size-distribution-in-the-one-dimensional-ising-model" class="level2">
+<h2 class="anchored" data-anchor-id="article-4-exact-cluster-size-distribution-in-the-one-dimensional-ising-model">Article 4: Exact cluster size distribution in the one-dimensional Ising model</h2>
+<p>The paper derives an exact analytical expression for the distribution of geometrical spin clusters in the 1D Ising model in the thermodynamic limit. It compares that theoretical result with Monte Carlo simulations and explores how the cluster size distribution depends on energy (or temperature). Unlike many Ising studies focused on magnetisation or energy, this one is specifically about cluster statistics.</p>
+<p>The paper finds an exact analytical formula for the normalized number of clusters of each size in the 1D Ising model, “Cluster” here meaning a contiguous set of spins in the same state (all <span class="math inline">\(+1\)</span> or all <span class="math inline">\(−1\)</span>). It uses Monte Carlo simulations to check the analytic formula and confirm that the predicted distribution matches the observed one in practice. The paper studies how the cluster size distribution changes with energy. The exact formula is given in the thermodynamic limit (as the number of spins <span class="math inline">\(→ ∞\)</span>), which is the regime most relevant for statistical physics and scaling.</p>
+<p>The central outcome is a closed-form expression for cluster frequencies as a function of energy/temperature. Can therefore write down how many clusters of size as you expect per site without simulating them. The distribution is normalized, so it gives true probabilities (or frequencies) of each cluster size.</p>
+<p>This paper provides a rare case where the cluster size distribution is known analytically for the 1D Ising model, showing exactly how many clusters of each size you should expect in equilibrium and how that distribution varies with energy (temperature). Because the 1D Ising model doesn’t have a phase transition or diverging correlation length, its cluster statistics behave differently from higher dimensions. Could compare our simulation results to an exact formula in 1D and see how the cluster size distribution changes with dimensionality and temperature. It also demonstrates the general idea that cluster distributions depend sensitively on temperature and energy, which we could use to interpret our own results in 2D and 3D systems.</p>
+</section>
+<section id="article-5-shape-and-size-of-clusters-in-the-ising-model" class="level2">
+<h2 class="anchored" data-anchor-id="article-5-shape-and-size-of-clusters-in-the-ising-model">Article 5: Shape and size of clusters in the Ising model</h2>
+<p>This paper introduces a quantitative measure of cluster shape in the 2D Ising model using Monte Carlo data. Instead of just counting how many spins are in a cluster, the authors introduce the cyclomatic number as a way of measuring how compact or ramified (branchy, tree-like) a cluster is. They then study how the size, shape, and number of cycles in clusters vary with temperature, especially near the critical point, and connect these geometric properties to ideas from percolation theory, the Whitney polynomial, and critical scaling. This is one of the first papers to explicitly measure cluster geometry in an Ising simulation.</p>
+<p>Clusters are not just “groups of spins, they are are analysed in terms of: number of spins n, number of bonds ℓ, number of independent cycles c.&nbsp;Cyclomatic number are defined as <span class="math inline">\(c(n,ℓ)=ℓ−n+1\)</span>. This measures how many loops a cluster contains: Tree-like cluster <span class="math inline">\(→ c=0\)</span> and Loopy/compact cluster → large cc. The coefficient of compactness is defined as <span class="math inline">\(A=c(n−1)\)</span>, which ranges from <span class="math inline">\(A=0\)</span> to completely ramified (branchy) to <span class="math inline">\(A=1\)</span>, which is very compact - quantitative measure of cluster shape.</p>
+<p>Key results: At very high temperature (random percolation): <span class="math inline">\(A≈0.2\)</span>, so clusters are very ramified. As temperature decreases toward Tc: <span class="math inline">\(A→0.7\)</span>. Below Tc​: <span class="math inline">\(A→1\)</span> rapidly so clusters become compact droplets From Glauber (single-spin flip) Monte Carlo, They measured for each cluster: number of spins n, number of bonds, l , number of cycles c, surface bonds s. From these they computed: clusters per site, spins per cluster, cycles per site, cycles per cluster, compactness A.</p>
+<p>The paper measures how cluster size and shape change with temperature in a 2D Ising simulation using a quantitative geometric measure (the cyclomatic number). It shows that clusters are highly ramified at high temperature, become increasingly compact as the system approaches the critical temperature, and turn into compact droplets below Tc. It also connects the cluster size distribution at criticality to known critical exponents and scaling laws. The statistical definitions used for cluster averages, and the practical method of extracting shape information from bond and surface counts, provide a clear framework you can apply directly in your own simulations when comparing clusters across dimensions.</p>
+</section>
+<section id="article-6-using-the-random-cluster-model-for-ising-model-simulations" class="level2">
+<h2 class="anchored" data-anchor-id="article-6-using-the-random-cluster-model-for-ising-model-simulations">Article 6: Using the Random-Cluster Model for Ising Model Simulations</h2>
+<p>This thesis derives, from first principles, how the Ising model can be reformulated into the Fortuin–Kasteleyn (FK) random-cluster representation using a path-integral and Poisson process formulation. It then shows how this representation leads naturally to cluster algorithms such as Swendsen–Wang, which are dramatically more efficient than single-spin Metropolis updates near the critical point. It then uses this to measure critical exponents and dynamic critical slowing down in the 2D Ising model.</p>
+<p>Clusters are the natural variables of the Ising model: Spins are not the “right” objects near criticality — clusters are. The FK representation shows that Ising behaviour can be described entirely in terms of connected components of bonds. Geometric meaning of FK clusters - Clusters are built by: Drawing “sticks” in time for each node. Adding bridges between nodes when certain operators occur. Connected sticks form a cluster. Some clusters are “wired” to a ghost node.</p>
+<p>Key result: <span class="math inline">\(μβ,h​(νi​)=Pr(i↔g)\)</span> and <span class="math inline">\(μβ,h(νiνj)=Pr⁡(i↔j)\)</span>, meaning Spin correlations are literally probabilities of belonging to the same cluster. Critical behaviour in cluster language: Near Tc​, clusters become very large, Correlation length = typical cluster size. Magnetisation = probability of being in a giant cluster. Metropolis fails near Tc as Single spin flips so very slow decorrelation and Critical slowing down becomes severe.</p>
+<p>This thesis shows that clusters are not just a geometric curiosity but the fundamental objects governing Ising model behaviour, with spin correlations directly equal to cluster connectivity probabilities. This provides both a theoretical and computational explanation for why cluster formation, size, and connectivity are central to understanding critical behaviour, and gives us a direct framework for interpreting our own cluster measurements in terms of correlation length, magnetisation, and critical scaling.</p>
+</section>
+<section id="overall-literature-summary" class="level1">
+<h1>Overall Literature Summary</h1>
+<p>The most directly relevant paper for this project is Domb and Stoll’s study of the shape and size of clusters in the two-dimensional Ising model. This work goes beyond simply counting spins in a cluster and introduces a quantitative geometric measure of cluster shape through the cyclomatic number and the coefficient of compactness. Using Monte Carlo simulations, the authors show how cluster size and shape change systematically with temperature, particularly as the system approaches the critical point. They demonstrate that clusters are highly ramified at high temperature, become increasingly compact near the critical temperature, and form dense droplet-like structures below it. The paper also connects the cluster size distribution at criticality to known critical exponents, providing both a practical framework for measuring cluster geometry in simulations and a clear theoretical link between cluster structure and critical behaviour.</p>
+<p>The theoretical foundation for studying clusters comes from the Fortuin–Kasteleyn random-cluster representation of the Ising model, as developed in Delboo’s thesis, which shows that spin correlations are directly equivalent to probabilities of sites belonging to the same cluster. This establishes clusters as the natural objects governing critical behaviour and explains why cluster-based algorithms dramatically reduce critical slowing down near the phase transition. Complementing this, the exact analytical study of cluster size distributions in the one-dimensional Ising model provides a valuable baseline case where clusters can be described exactly and no phase transition occurs. Together, these works show that cluster properties depend sensitively on dimensionality: in one dimension clusters remain finite and well-behaved, while in higher dimensions clusters grow, change shape, and become the dominant structures near the critical temperature. These papers therefore justify both the physical meaning of clusters and the importance of comparing their behaviour across different spatial dimensions.</p>
+<p>In this project, a cluster is defined as a connected component of nearest-neighbour spins with the same orientation on the lattice. Connectivity is determined purely by geometric adjacency, meaning that any neighbouring spins with the same sign belong to the same cluster. This definition matches the approach used in studies of cluster geometry such as Domb and Stoll, and allows direct measurement of cluster size, shape, and connectivity from simulation data. The physical significance of this definition is supported by the Fortuin–Kasteleyn representation of the Ising model, which shows that spin correlations correspond to probabilities of sites belonging to the same cluster, ensuring that these geometric clusters are directly linked to the underlying statistical physics of the system.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

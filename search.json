@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "Ising-Model-Lab-Book/week4.html",
+    "href": "Ising-Model-Lab-Book/week4.html",
+    "title": "Week 4 Overview",
+    "section": "",
+    "text": "Main Activities:\n\nUpgraded the 2D Code       * Looking at the output results produced in 2D last week, I decided to improve the quality of these.\n     * I once again researched into the literature to see if there was a more sophisticated way to display          the data, as scatter graphs limit the clarity of the representation of the data.       * I found that log plots showed a much more transparent representation of the data so made the relevant          graphs into log plots.\n      * Less needed changing for 1D - the only significant edit was how to graphically represent 1D shape.\nStarted to produce results       * I started to produce a few preliminary results, starting with 2D.       * I began with a very small cluster size to confirm that the code was functioning correctly.\n     * I then moved on to increasing the cluster size, noting that larger cluster sizes matched more closely         with the literature. A drawback to larger cluster sizes is the configuration time.       * I decided it was better to get concrete results for 2D before moving onto other dimensions.       * To this end, I varied the temperature and cluster size to produce a series of results.\nUpdated Lab Book       * I put the information I had been collecting, such as the literature review notes, into the Lab book.       * I also inputted my entries for weeks 1-3 that I had been storing on alternative software until now.\n\n\n\nMain Results:\n\nHave functional code in 1D and 3D\nProduced a series of results and outputs for the 2D set-up\nUpdated Lab Book"
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/week2.html",
+    "href": "Ising-Model-Lab-Book/week2.html",
+    "title": "Week 2 Overview",
+    "section": "",
+    "text": "Main Activities:\n\nInstalled Spyder       * Installed Spyder as a more effective IDE that was very compatible with GitHub. \nReimagined Quarto       * Used terminal and quarto preview to facilitate the lab book, rather than running through VS Editor.\nEdited and Developed Base Code       * Edited and developed the code that was provided at the beginning of the project so that it was tailored.          to the project direction. \nCreated Code for the Clustering Algorithms       * I created the core of the code for the clustering algorithm.       * As a starting point, I decided to focus on the cluster size, shape and speed to converge, when very close          to the critical temperature.       * I am endeavouring, at this point, to try and establish the clustering attribute outcomes for 1D, 2D and 3D          beginning with the 2D code.       * I decided that it would be better to have a set code block for 1D, 2D and 3D, rather than a set code block          for the attributes and then re-coding them every time for the dimension.       * I also decided that it would be beneficial to use Monte-Carlo Metropolis methods rather than Wolff or          Swendsen due to the definition of a cluster.       * It was also important to establish the exact definition for a cluster.\n\n\n\nMain Discoveries:\n\nCode core written \nDefinition of a cluster established:  In this project, a cluster is defined as a connected component of nearest-neighbour spins with the same orientation on the lattice. Connectivity is determined purely by geometric adjacency, meaning that any neighbouring spins with the same sign belong to the same cluster. This definition matches the approach used in studies of cluster geometry such as Domb and Stoll, and allows direct measurement of cluster size, shape, and connectivity from simulation data. The physical significance of this definition is supported by the Fortuin–Kasteleyn representation of the Ising model, which shows that spin correlations correspond to probabilities of sites belonging to the same cluster, ensuring that these geometric clusters are directly linked to the underlying statistical physics of the system."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/index.html",
+    "href": "Ising-Model-Lab-Book/index.html",
+    "title": "Third Year Labs - Ising Model",
+    "section": "",
+    "text": "Minimal repository for third year labs exploring the Ising model."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/index.html#about",
+    "href": "Ising-Model-Lab-Book/index.html#about",
+    "title": "Third Year Labs - Ising Model",
+    "section": "",
+    "text": "Minimal repository for third year labs exploring the Ising model."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/index.html#contents",
+    "href": "Ising-Model-Lab-Book/index.html#contents",
+    "title": "Third Year Labs - Ising Model",
+    "section": "Contents",
+    "text": "Contents\nThis repository contains code and reading materials for the Ising model practical."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/equ.html",
+    "href": "Ising-Model-Lab-Book/equ.html",
+    "title": "Equations and Definitions",
+    "section": "",
+    "text": "This is to test the updating ability"
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/Weekly-Log.html#week-one",
+    "href": "Ising-Model-Lab-Book/Weekly-Log.html#week-one",
+    "title": "Log Overview",
+    "section": "Week One:",
+    "text": "Week One:\n\nDiscussed options for project direction\nSet up GitHub\nSet up Quarto Website\nFound related literature\nRead literature and performed literature review\nIdentified possible direction for project"
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/Weekly-Log.html#week-two",
+    "href": "Ising-Model-Lab-Book/Weekly-Log.html#week-two",
+    "title": "Log Overview",
+    "section": "Week Two:",
+    "text": "Week Two:\n\nInstalled Spyder and Reimagined Quarto\nEdited and developed the base code\nCreated code for the Clustering Algorithm, specifically in 2D\nEstablished Secure definition of a cluster"
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/Weekly-Log.html#week-three",
+    "href": "Ising-Model-Lab-Book/Weekly-Log.html#week-three",
+    "title": "Log Overview",
+    "section": "Week Three:",
+    "text": "Week Three:\n\nAdapted the Clustering Algorithm code created in week 2 to extend it to 1D and 3D\nProduced a series of results and outputs for the 2D set-up\nUpdated the Lab Book so that it was functional on Quarto."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/lr.html",
+    "href": "Ising-Model-Lab-Book/lr.html",
+    "title": "Literature Review",
+    "section": "",
+    "text": "Article 1: Cluster Algorithm for the Ising Model\nArticle 2: “Clusters” in the king Model, Metastable States and Essential Singularity\nArticle 3: The FCC Ising Model in the cluster variation approximation\nArticle 4: Exact cluster size distribution in the one-dimensional Ising model\nArticle 5: Shape and size of clusters in the Ising model\nArticle 6: Using the Random-Cluster Model for Ising Model Simulations"
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/lr.html#articles",
+    "href": "Ising-Model-Lab-Book/lr.html#articles",
+    "title": "Literature Review",
+    "section": "",
+    "text": "Article 1: Cluster Algorithm for the Ising Model\nArticle 2: “Clusters” in the king Model, Metastable States and Essential Singularity\nArticle 3: The FCC Ising Model in the cluster variation approximation\nArticle 4: Exact cluster size distribution in the one-dimensional Ising model\nArticle 5: Shape and size of clusters in the Ising model\nArticle 6: Using the Random-Cluster Model for Ising Model Simulations"
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/lr.html#literature-summaries",
+    "href": "Ising-Model-Lab-Book/lr.html#literature-summaries",
+    "title": "Literature Review",
+    "section": "Literature Summaries",
+    "text": "Literature Summaries\n\nArticle 1: Cluster Algorithm for the Ising Model\nDescribes cluster-based Monte Carlo algorithms for the Ising model — specifically the Swendsen–Wang algorithm, which builds clusters of same-spin sites and flips them as whole units instead of flipping spins one by one. It also covers related techniques for quantum Monte Carlo, but the core part that connects to your questions is the cluster formation and identification.\nDefines a cluster as a group of spins that are the same orientation (all +1 or all −1) or connected via “active” bonds. Bonds are formed only between neighbouring spins that are aligned. Treats cluster formation as a core structural object of simulation, not arbitrary grouping - therefore they have physical meaning in terms of connected spins linked by thermal weighting, and also algorithmic meaning.\nCluster Construction Rule: For each nearest-neighbour pair \\((_i,_j)(_i,_j)\\). If spins match: \\(σ_i=σ_jσ_i​=σ_j\\), a bond may be activated between them. If spins differ: \\(σ_i≠σ_jσ_i​=σ_j​\\), no bond is formed. Bond activation is probabilistic, with probability based on temperature and interaction strength. Equation: \\(P(b_{ij}=1)=1−e^{-2βJ}\\). This governs bond formation and hence cluster structure\nComputational method: generate bonds, identify clusters via graph traversal, flip clusters as collective units\n\n\nArticle 2: “Clusters” in the king Model, Metastable States and Essential Singularity\nDiscusses different ways to define clusters in the Ising model, how those definitions relate to critical phenomena and nucleation theory, and how cluster concentrations scale near critical points using both theoretical arguments and Monte Carlo results. It explores how cluster statistics behave, including a crossover from critical to geometric behaviour, and relates cluster fluctuations to thermodynamic singularities and metastable states.\nCluster Definitions: Clusters are described in terms of a contour surrounding flipped spins — effectively a geometric object defined by size \\(ss\\) and number of reversed spins \\(ll\\). The paper shows that critical behaviour of clusters is not dominated by fully “ramified” (tree-like) clusters — contrary to some earlier conjectures. For large clusters, a crossover to “geometric” behaviour is observed, meaning clusters behave like percolation objects at large scales. This crossover is interpreted using standard scaling theory of critical phenomena.\nPaper connects cluster properties in the Ising model directly to critical scaling behaviour near the phase transition. By introducing the cluster concentration function \\(p_{(l,s)}p_{(l,s)}\\), which depends on both the number of flipped spins and the geometric size of the enclosing contour, it shows that cluster size and shape distributions obey scaling laws consistent with universal critical behaviour. It also demonstrates that clusters at criticality are not simply highly ramified, tree-like structures, but instead exhibit more complex geometric characteristics that reflect the underlying physics of the phase transition. Its scaling arguments imply that cluster statistics are governed by the same principles that determine critical exponents, linking geometric cluster properties to thermodynamic critical phenomena."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/lr.html#article-3-the-fcc-ising-model-in-the-cluster-variation-approximation",
+    "href": "Ising-Model-Lab-Book/lr.html#article-3-the-fcc-ising-model-in-the-cluster-variation-approximation",
+    "title": "Literature Review",
+    "section": "Article 3: The FCC Ising Model in the cluster variation approximation",
+    "text": "Article 3: The FCC Ising Model in the cluster variation approximation\nApplies the cluster variation method (CVM) to the face-centered cubic (fcc) Ising ferromagnet, using increasingly large cluster approximations to compute thermodynamic properties such as the critical temperature and specific heat with high precision. The CVM is a theoretical approach that expands the free energy in terms of finite cluster probabilities, minimizing it to approximate equilibrium behaviour more accurately than simple mean-field theories.\nCluster Role in the Method: Clusters here are mathematical objects selected for approximation of the free energy in the CVM. Rather than physical spin domains (as in Monte Carlo cluster counts), CVM clusters represent sets of lattice sites whose joint probabilities are explicitly tracked. Free Energy in Terms of Cluster Variables: The CVM expresses free energy as a function of cluster occupation probabilities.\nThe equilibrium cluster probabilities come from minimizing the free energy under consistency constraints, leading to a set of coupled nonlinear equations. Using a high-level cluster approximation yields a critical temperature estimate within ~1.5% of high-temperature expansion results, showing that larger clusters capture critical correlations well.\nThe paper uses “clusters” as a theoretical basis for improving approximations to the free energy in a three-dimensional (fcc) Ising system. The cluster variation method captures local correlations by tracking probabilities of multi-site configurations, and larger clusters in the approximation lead to better estimates of critical properties like the critical temperature. Highlights how cluster correlations influence critical behaviour."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/lr.html#article-4-exact-cluster-size-distribution-in-the-one-dimensional-ising-model",
+    "href": "Ising-Model-Lab-Book/lr.html#article-4-exact-cluster-size-distribution-in-the-one-dimensional-ising-model",
+    "title": "Literature Review",
+    "section": "Article 4: Exact cluster size distribution in the one-dimensional Ising model",
+    "text": "Article 4: Exact cluster size distribution in the one-dimensional Ising model\nThe paper derives an exact analytical expression for the distribution of geometrical spin clusters in the 1D Ising model in the thermodynamic limit. It compares that theoretical result with Monte Carlo simulations and explores how the cluster size distribution depends on energy (or temperature). Unlike many Ising studies focused on magnetisation or energy, this one is specifically about cluster statistics.\nThe paper finds an exact analytical formula for the normalized number of clusters of each size in the 1D Ising model, “Cluster” here meaning a contiguous set of spins in the same state (all \\(+1\\) or all \\(−1\\)). It uses Monte Carlo simulations to check the analytic formula and confirm that the predicted distribution matches the observed one in practice. The paper studies how the cluster size distribution changes with energy. The exact formula is given in the thermodynamic limit (as the number of spins \\(→ ∞\\)), which is the regime most relevant for statistical physics and scaling.\nThe central outcome is a closed-form expression for cluster frequencies as a function of energy/temperature. Can therefore write down how many clusters of size as you expect per site without simulating them. The distribution is normalized, so it gives true probabilities (or frequencies) of each cluster size.\nThis paper provides a rare case where the cluster size distribution is known analytically for the 1D Ising model, showing exactly how many clusters of each size you should expect in equilibrium and how that distribution varies with energy (temperature). Because the 1D Ising model doesn’t have a phase transition or diverging correlation length, its cluster statistics behave differently from higher dimensions. Could compare our simulation results to an exact formula in 1D and see how the cluster size distribution changes with dimensionality and temperature. It also demonstrates the general idea that cluster distributions depend sensitively on temperature and energy, which we could use to interpret our own results in 2D and 3D systems."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/lr.html#article-5-shape-and-size-of-clusters-in-the-ising-model",
+    "href": "Ising-Model-Lab-Book/lr.html#article-5-shape-and-size-of-clusters-in-the-ising-model",
+    "title": "Literature Review",
+    "section": "Article 5: Shape and size of clusters in the Ising model",
+    "text": "Article 5: Shape and size of clusters in the Ising model\nThis paper introduces a quantitative measure of cluster shape in the 2D Ising model using Monte Carlo data. Instead of just counting how many spins are in a cluster, the authors introduce the cyclomatic number as a way of measuring how compact or ramified (branchy, tree-like) a cluster is. They then study how the size, shape, and number of cycles in clusters vary with temperature, especially near the critical point, and connect these geometric properties to ideas from percolation theory, the Whitney polynomial, and critical scaling. This is one of the first papers to explicitly measure cluster geometry in an Ising simulation.\nClusters are not just “groups of spins, they are are analysed in terms of: number of spins n, number of bonds ℓ, number of independent cycles c. Cyclomatic number are defined as \\(c(n,ℓ)=ℓ−n+1\\). This measures how many loops a cluster contains: Tree-like cluster \\(→ c=0\\) and Loopy/compact cluster → large cc. The coefficient of compactness is defined as \\(A=c(n−1)\\), which ranges from \\(A=0\\) to completely ramified (branchy) to \\(A=1\\), which is very compact - quantitative measure of cluster shape.\nKey results: At very high temperature (random percolation): \\(A≈0.2\\), so clusters are very ramified. As temperature decreases toward Tc: \\(A→0.7\\). Below Tc​: \\(A→1\\) rapidly so clusters become compact droplets From Glauber (single-spin flip) Monte Carlo, They measured for each cluster: number of spins n, number of bonds, l , number of cycles c, surface bonds s. From these they computed: clusters per site, spins per cluster, cycles per site, cycles per cluster, compactness A.\nThe paper measures how cluster size and shape change with temperature in a 2D Ising simulation using a quantitative geometric measure (the cyclomatic number). It shows that clusters are highly ramified at high temperature, become increasingly compact as the system approaches the critical temperature, and turn into compact droplets below Tc. It also connects the cluster size distribution at criticality to known critical exponents and scaling laws. The statistical definitions used for cluster averages, and the practical method of extracting shape information from bond and surface counts, provide a clear framework you can apply directly in your own simulations when comparing clusters across dimensions."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/lr.html#article-6-using-the-random-cluster-model-for-ising-model-simulations",
+    "href": "Ising-Model-Lab-Book/lr.html#article-6-using-the-random-cluster-model-for-ising-model-simulations",
+    "title": "Literature Review",
+    "section": "Article 6: Using the Random-Cluster Model for Ising Model Simulations",
+    "text": "Article 6: Using the Random-Cluster Model for Ising Model Simulations\nThis thesis derives, from first principles, how the Ising model can be reformulated into the Fortuin–Kasteleyn (FK) random-cluster representation using a path-integral and Poisson process formulation. It then shows how this representation leads naturally to cluster algorithms such as Swendsen–Wang, which are dramatically more efficient than single-spin Metropolis updates near the critical point. It then uses this to measure critical exponents and dynamic critical slowing down in the 2D Ising model.\nClusters are the natural variables of the Ising model: Spins are not the “right” objects near criticality — clusters are. The FK representation shows that Ising behaviour can be described entirely in terms of connected components of bonds. Geometric meaning of FK clusters - Clusters are built by: Drawing “sticks” in time for each node. Adding bridges between nodes when certain operators occur. Connected sticks form a cluster. Some clusters are “wired” to a ghost node.\nKey result: \\(μβ,h​(νi​)=Pr(i↔g)\\) and \\(μβ,h(νiνj)=Pr⁡(i↔j)\\), meaning Spin correlations are literally probabilities of belonging to the same cluster. Critical behaviour in cluster language: Near Tc​, clusters become very large, Correlation length = typical cluster size. Magnetisation = probability of being in a giant cluster. Metropolis fails near Tc as Single spin flips so very slow decorrelation and Critical slowing down becomes severe.\nThis thesis shows that clusters are not just a geometric curiosity but the fundamental objects governing Ising model behaviour, with spin correlations directly equal to cluster connectivity probabilities. This provides both a theoretical and computational explanation for why cluster formation, size, and connectivity are central to understanding critical behaviour, and gives us a direct framework for interpreting our own cluster measurements in terms of correlation length, magnetisation, and critical scaling."
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/week1.html",
+    "href": "Ising-Model-Lab-Book/week1.html",
+    "title": "Week 1 Overview",
+    "section": "",
+    "text": "Main Activities:\n\nDeciding direction of the project and possible avenues to explore.       * The current top suggests are something to do with how clustering attributes (such as shapes and sizes)          vary with dimensionality, or something to do with the critical exponent.       * We are also looking into where there might be a cross over between the critical exponent and clustering          attributes, and whether this could be incorporated into the project.\nSetting up infrastructure to facilitate the project       * Set up a GitHub account so that I could pull the start-up code repository       * Installed Quarto, found I didn’t need to install Quarto and then set up Quarto access to work through          Visual Studio Editor. VS Editor had to be deleted and re-installed, following which Quarto functioned.       * I then set up a few pages on the website to become familiar with how it works.\nLiterature Inquiry\n     * Searched online for articles on Cluster Algorithms and the Critical Exponent. I found several articles that          were potentially of interested, including one that looked like it may contain helpful coding hints.       * I ensured that all of the article were proper science articles from reputable sources.\nLiterature Review       * I then proceeded to read the articles and write a (relatively!) brief literature review for each one.       * One of the key observations from this was the way in which a Cluster is defined. I also established          important equations and identified recommended approaches.       * I then wrote a final literature summary and identified a possible project direction based on the content          of the articles.\n\n\n\nMain Discoveries:\n\nPossible Project direction considered at this point:  As the spatial dimension increases, cluster formation in the Ising model changes qualitatively. In one dimension, clusters remain finite and their size distribution is exactly known, reflecting the absence of a phase transition. In higher dimensions, clusters grow, change shape, and become increasingly compact as the system approaches the critical temperature. These geometric changes are directly linked to diverging correlation lengths and critical scaling. Cluster-based representations and algorithms reveal that clusters are the fundamental objects governing both static and dynamic critical behaviour, explaining why cluster size, shape, and formation times depend sensitively on dimension.\n\n\n\nMain Documentation:\n\nPlease click here to see the full literature review"
+  },
+  {
+    "objectID": "Ising-Model-Lab-Book/week3.html",
+    "href": "Ising-Model-Lab-Book/week3.html",
+    "title": "Week 3 Overview",
+    "section": "",
+    "text": "Main Activities:\n\nTranslated the Clustering Algorithm to extend to 1D and 3D.       * Currently, the code created is functional for 2D only, so my starting point is to extend it to 1D & 3D.       * My main consideration when doing this was how to put the inputs needed to vary with the dimensions,          as well as which graphs would still produce correctly and which would need reconstructing.       * A lot more graphs needed changing for the 3D, and I also included a graph for the Anisotrophy.       * Less needed changing for 1D - the only significant edit was how to graphically represent 1D shape.\nStarted to produce results       * I started to produce a few preliminary results, starting with 2D.       * I began with a very small cluster size to confirm that the code was functioning correctly.\n     * I then moved on to increasing the cluster size, noting that larger cluster sizes matched more closely         with the literature. A drawback to larger cluster sizes is the configuration time.       * I decided it was better to get concrete results for 2D before moving onto other dimensions.       * To this end, I varied the temperature and cluster size to produce a series of results.\nUpdated Lab Book       * I put the information I had been collecting, such as the literature review notes, into the Lab book.       * I also inputted my entries for weeks 1-3 that I had been storing on alternative software until now.\n\n\n\nMain Results:\n\nHave functional code in 1D and 3D\nProduced a series of results and outputs for the 2D set-up\nUpdated Lab Book"
+  }
+]
